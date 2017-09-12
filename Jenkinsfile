@@ -1,7 +1,16 @@
  pipeline {
 	agent any
+	 tools {
+       		 maven 'mvn-3.5.0'
+    		}
 	stages {
 		stage ('build') {
+
+           		steps {
+                		echo '****************STARTING BUILD*******************'
+               			sh 'mvn package'
+        	    }
+     		   }
 			steps {
 				sh "echo Building"
 				nexusArtifactUploader(
