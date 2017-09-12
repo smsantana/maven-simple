@@ -5,6 +5,7 @@ pipeline {
 			steps {
 				sh "echo Building"
 			}
+		}
 
 		stage ('uploadNexus') {
 			nexusArtifactUploader artifacts: [
@@ -21,4 +22,3 @@ pipeline {
 		}
 
 	}
-}
