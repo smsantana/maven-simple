@@ -6,11 +6,11 @@
 	stages {
 		stage ('build') {
 
-           		steps {
+           	steps {
                 		echo '****************STARTING BUILD*******************'
                			sh 'mvn package'
         	    }
-     		   }
+     		   
 			steps {
 				sh "echo Building"
 				nexusArtifactUploader(
@@ -28,6 +28,7 @@
 					 type: 'jar']
 				    ]
 				 )
+				}
 				}
 			}
 
